@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
 
-app.get('/current-date', (req, res) => {
-  const currentDate = new Date().toISOString();
-  res.json({ currentDate });
+// Define a route that responds with "Hello" in JSON format
+app.get('/hello', (req, res) => {
+  const response = { message: 'Hello' };
+  res.json(response);
 });
 
-// Use the provided Vercel port or default to 3000
+// Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
